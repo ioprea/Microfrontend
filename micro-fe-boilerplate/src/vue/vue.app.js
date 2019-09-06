@@ -1,5 +1,5 @@
-import Vue from 'vue';
-import singleSpaVue from 'single-spa-vue';
+import Vue from '../vue-app/src/node_modules/vue'
+import singleSpaVue from '../vue-app/src/node_modules/single-spa-vue'
 import Hello from './main.vue'
 
 const vueLifecycles = singleSpaVue({
@@ -7,17 +7,17 @@ const vueLifecycles = singleSpaVue({
   appOptions: {
     el: '#vue',
     render: r => r(Hello)
-  } 
-});
+  }
+})
 
 export const bootstrap = [
-  vueLifecycles.bootstrap,
-];
+  vueLifecycles.bootstrap
+]
 
 export const mount = [
-  vueLifecycles.mount,
-];
+  vueLifecycles.mount
+]
 
 export const unmount = [
-  vueLifecycles.unmount,
-];
+  vueLifecycles.unmount
+]

@@ -8,12 +8,16 @@
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
     "react-transition-group": "^4.1.1",
-    "single-spa": "^4.3.4",
+    "single-spa": "^4.4.1",
     "single-spa-react": "^2.10.2",
     "single-spa-vue": "^1.4.0",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "core-js": "^2.6.5",
+    "vue-router": "^3.0.3",
+    "vuex": "^3.0.1"
   },
   "scripts": {
+    "install-dev": "npm install --prefix ./src/react-app && npm install --prefix ./src/vue-app",
     "start": "webpack-dev-server --open",
     "build": "webpack --config webpack.config.js -p"
   },
@@ -32,6 +36,20 @@
     "vue-template-compiler": "^2.6.10",
     "webpack": "^4.34.0",
     "webpack-cli": "^3.3.4",
-    "webpack-dev-server": "^3.7.2"
+    "webpack-dev-server": "^3.7.2",
+    "@vue/cli-plugin-babel": "^3.11.0",
+    "@vue/cli-plugin-e2e-cypress": "^3.11.0",
+    "@vue/cli-plugin-eslint": "^3.11.0",
+    "@vue/cli-plugin-unit-jest": "^3.11.0",
+    "@vue/cli-service": "^3.11.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.1.0"
   }
 }
