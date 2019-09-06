@@ -18,18 +18,7 @@ module.exports = {
     rules: [
       {
         test: /\.(sa|sc|c)ss$/,
-        use: [{
-          loader: 'css-loader',
-          options: { url: false }
-        },
-        {
-          loader: 'postcss-loader',
-          options: { url: false }
-        },
-        {
-          loader: 'sass-loader',
-          options: { url: false }
-        }]
+        use: ['vue-style-loader', 'css-loader', 'sass-loader']
       }, {
         test: /\.js$/,
         exclude: [path.resolve(__dirname, 'node_modules')],

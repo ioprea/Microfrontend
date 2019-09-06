@@ -1,20 +1,24 @@
 import { registerApplication, start } from 'single-spa'
 console.log(location.pathname)
 
-function loadingFunction() {
+function loadVue() {
+  return import('./react-app/src/index.js')
+}
+
+function loadReact() {
   return import('./vue-app/src/main.js')
 }
 
 registerApplication(
   'vue',
-  loadingFunction,
+  loadVue,
   () => window.location.pathname === '/vue'
 )
 
-// registerApplication(
-//   'react',
-//   () => import('../micro-fe-boilerplate/src/react-app/src/index.js'),
-//   () => location.pathname === "/react"  ? false : true
-// );
+registerApplication(
+  'react',
+  loadReact,
+  () => location.pathname === '/react'
+)
 
 start()
