@@ -2,11 +2,12 @@ import { registerApplication, start } from 'single-spa'
 console.log(location.pathname)
 
 function loadVue() {
-  return import('./react-app/src/index.js')
+  return import('./vue-app/src/main.js')
 }
 
 function loadReact() {
-  return import('./vue-app/src/main.js')
+  return import('./react-app/src/index.js')
+
 }
 
 registerApplication(

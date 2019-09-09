@@ -20,16 +20,24 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: ['vue-style-loader', 'css-loader', 'sass-loader']
       }, {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: [path.resolve(__dirname, 'node_modules')],
-        loader: 'babel-loader'
+        // loader: 'babel-loader',
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-react']
+            }
+          }
+        ]
       },
       {
         test: /\.vue$/,
         loader: 'vue-loader'
       },
       {
-        test: /.*\.(gif|png|jpe?g)$/i,
+        test: /.*\.(gif|png|svg|jpe?g)$/i,
         use: [
           {
             loader: 'file-loader'
@@ -42,6 +50,7 @@ module.exports = {
     fs: 'empty'
   },
   resolve: {
+    extensions: ['.js', '.jsx'],
     alias: {
       vue: 'vue/dist/vue.js'
     },
